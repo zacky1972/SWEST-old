@@ -6,6 +6,9 @@ gem 'rails', '4.2.5'
 gem 'slim-rails'
 # Use BootStrap
 gem 'bootstrap-sass'
+# Use Paperclip
+gem 'paperclip'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

@@ -43,6 +43,6 @@ class PresentersController < ApplicationController
     
     private
     def presenter_params
-        params.require(:presenter).permit(:name, :affiliation)
+        params.require(:presenter).permit(:name, :affiliation, :avatar)
     end
 end
