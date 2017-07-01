@@ -1,24 +1,28 @@
+# SWEST Contents Management System
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+## 使い方
 
+このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
+その後、次のコマンドで必要になる RubyGems をインストールします。
 
-Welcome to your Rails project on Cloud9 IDE!
+```
+$ bundle install --without production
+```
 
-To get started, just do the following:
+その後、データベースへのマイグレーションを実行します。
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://swest-zacky1972kitakyu.c9users.io/).
+```
+$ rails db:migrate
+```
 
-Happy coding!
-The Cloud9 IDE team
+最後に、テストを実行してうまく動いているかどうか確認してください。
 
+```
+$ rails test
+```
 
-## Support & Documentation
+テストが無事に通ったら、Railsサーバーを立ち上げる準備が整っているはずです。
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+```
+$ rails server
+```
