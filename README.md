@@ -25,4 +25,8 @@ $ rails test
 
 ```
 $ rails server
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 7ff27b6... Improve the README
