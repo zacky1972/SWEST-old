@@ -1,0 +1,9 @@
+p
+    strong 名前:
+    = @presenter.name
+p
+    strong 所属:
+    = @presenter.affiliation
+
+= link_to '戻る', presenters_path
+= link_to '編集', edit_presenter_path(@presenter) 

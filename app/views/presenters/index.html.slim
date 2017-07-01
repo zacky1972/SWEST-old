@@ -1,0 +1,17 @@
+h1 Listing presenters
+table
+    tr
+        th 名前
+        th 所属
+        th colspan="3"
+    - @presenters.each do |presenter|
+        tr
+            td= presenter.name
+            td= presenter.affiliation
+            td= link_to '閲覧', presenter_path(presenter)
+            td= link_to '編集', edit_presenter_path(presenter)
+            td= link_to '削除', presenter_path(presenter),
+                method: :delete, data: { confirm: '本当に消しますか？' }
+
+= link_to '新規講演者', new_presenter_path
+
