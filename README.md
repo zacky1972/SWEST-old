@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SWEST Contents Management System
 
 ## 使い方
@@ -26,3 +27,6 @@ $ rails test
 ```
 $ rails server
 ```
+=======
+# SWEST
+>>>>>>> origin/master
