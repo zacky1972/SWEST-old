@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   get 'program/show'
   
   resources :presenters
+  resources :sessions
+  resources :slots
+  
+  get '/slots/:id/dup(.:format)' => 'slots#dup', :as => 'dup_slot'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

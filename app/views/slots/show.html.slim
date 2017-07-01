@@ -1,0 +1,12 @@
+p
+    = @slot.name
+p
+    = @slot.room
+p
+    = @slot.from
+p
+    = @slot.to
+
+= link_to '戻る', slots_path
+= link_to '編集', edit_slot_path(@slot) 
+= link_to '複製', dup_slot_path(@slot)

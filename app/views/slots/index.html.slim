@@ -1,0 +1,22 @@
+h1 セッションコマリスト
+table
+    tr
+        th セッション名
+        th 部屋
+        th 開始日時
+        th 終了日時
+        th colspan="4"
+    - @slots.each do |slot|
+        tr
+            td= slot.name
+            td= slot.room
+            td= slot.from
+            td= slot.to
+            td= link_to '閲覧', slot_path(slot)
+            td= link_to '編集', edit_slot_path(slot)
+            td= link_to '複製', dup_slot_path(slot)
+            td= link_to '削除', slot_path(slot),
+                method: :delete, data: { confirm: '本当に消しますか？' }
+
+= link_to '新規セッションコマ', new_slot_path
+

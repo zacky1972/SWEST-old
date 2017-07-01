@@ -1,0 +1,27 @@
+= form_for @slot, url: slot_path(@slot), method: :patch do |f|
+  - if @slot.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@slot.errors.count, "エラー")
+      ul
+        - @slot.errors.full_messages.each do |msg|
+          li= msg
+  p
+    = f.label :名前
+    br/
+    = f.text_field :name
+  p
+    = f.label :部屋
+    br/
+    = f.text_field :room
+  p
+    = f.label :開始時刻
+    br/
+    = f.datetime_select :from, {}, class: 'form-control'
+  p
+    = f.label :終了時刻
+    br/
+    = f.datetime_select :to, {}, class: 'form-control'
+  p
+    = f.submit
+= link_to '戻る', slots_path

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  room: MyString
+  from: 2017-07-01 20:51:56
+  to: 2017-07-01 20:51:56
+
+two:
+  name: MyString
+  room: MyString
+  from: 2017-07-01 20:51:56
+  to: 2017-07-01 20:51:56

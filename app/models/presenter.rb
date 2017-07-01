@@ -1,4 +1,5 @@
 class Presenter < ActiveRecord::Base
+    belongs_to :session
     validates :name, presence: true
     validates :affiliation, presence: true
     has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "100x100>" }, :default_url => "empty.jpg"

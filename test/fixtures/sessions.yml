@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slot_id: 1
+  title: MyText
+  abstract: MyText
+  introduction: MyText
+
+two:
+  slot_id: 1
+  title: MyText
+  abstract: MyText
+  introduction: MyText
