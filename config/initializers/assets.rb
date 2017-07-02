@@ -11,5 +11,5 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 config.assets.compile = true
-config.assets.css_compressor = :yui
-config.assets.js_compressor = :uglifier
+#config.assets.css_compressor = :yui
+#config.assets.js_compressor = :uglifier
