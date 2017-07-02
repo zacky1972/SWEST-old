@@ -1,23 +1,4 @@
 = form_for @presenter, url: presenter_path(@presenter), method: :patch do |f|
-  - if @presenter.errors.any?
-    #error_explanation
-      h2
-        = pluralize(@presenter.errors.count, "エラー")
-      ul
-        - @presenter.errors.full_messages.each do |msg|
-          li= msg
-  p
-    = f.label :名前
-    br/
-    = f.text_field :name
-  p
-    = f.label :所属
-    br/
-    = f.text_area :affiliation
-  p
-    = f.label :写真
-    br/
-    = f.file_field :avatar
-  p
-    = f.submit
+  = render partial: "error"
+  = render partial: "form", locals: {f: f}
 = link_to '戻る', presenters_path

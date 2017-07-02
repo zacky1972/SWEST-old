@@ -1,0 +1,7 @@
+- if @presenter.errors.any?
+    #error_explanation
+      h2
+        = @presenter.errors.count.to_s + " エラー"
+      ul
+        - @presenter.errors.full_messages.each do |msg|
+          li= msg
