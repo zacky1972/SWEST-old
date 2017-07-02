@@ -10,8 +10,8 @@ table
         tr
             td= slot.name
             td= slot.room
-            td= slot.from
-            td= slot.to
+            td= toLocal slot.from
+            td= toLocal slot.to
             td= link_to '閲覧', slot_path(slot)
             td= link_to '編集', edit_slot_path(slot)
             td= link_to '複製', dup_slot_path(slot)

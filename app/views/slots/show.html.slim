@@ -3,9 +3,9 @@ p
 p
     = @slot.room
 p
-    = @slot.from
+    = toLocal @slot.from
 p
-    = @slot.to
+    = toLocal @slot.to
 
 = link_to '戻る', slots_path
 = link_to '編集', edit_slot_path(@slot) 
