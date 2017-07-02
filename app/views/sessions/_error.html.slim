@@ -1,0 +1,7 @@
+- if @session.errors.any?
+    #error_explanation
+      h2
+        = @session.errors.count.to_s + " エラー"
+      ul
+        - @session.errors.full_messages.each do |msg|
+          li= msg

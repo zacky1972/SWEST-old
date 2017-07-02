@@ -1,0 +1,10 @@
+.session-presenter
+    .session-presenter-picture
+        = image_tag @presenter.avatar(:medium)
+    div
+        p
+            .session-presenter-name
+                = @presenter.name
+        p
+            .session-presenter-affiliation
+                = @presenter.affiliation

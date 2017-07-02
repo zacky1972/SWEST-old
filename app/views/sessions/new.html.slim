@@ -1,0 +1,5 @@
+h1 新規セッション
+= form_for @session, url: sessions_path do |f|
+  = render partial: "error"
+  = render partial: "form", locals: {f: f}
+= link_to '戻る', presenters_path

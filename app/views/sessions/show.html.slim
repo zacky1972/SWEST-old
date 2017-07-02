@@ -1,0 +1,17 @@
+.session-section-content
+    .session-date-time
+        p セッション開始・終了日時
+    .session-section-title
+        p = @session.title.presence || '企画中'
+    .session-presenters
+        p セッション講演者
+    p.session-abstract
+        p = @session.abstract.presence || '企画中'
+    - if @session.introduction.present?
+        .session-introduction-title
+            p 実行委員からの推薦文:
+        .session-introduction
+            p = @session.introduction
+    = link_to 'SWESTの参加申し込み', '#', class: 'session-regist'
+= link_to '戻る', sessions_path
+= link_to '編集', edit_session_path(@session) 
