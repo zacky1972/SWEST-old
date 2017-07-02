@@ -10,6 +10,6 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
-#config.assets.compile = true
-config.assets.css_compressor = :yui
-config.assets.js_compressor = :uglifier
+Rails.application.config.assets.compile = true
+Rails.application.config.assets.css_compressor = :yui
+Rails.application.config.assets.js_compressor = :uglifier
