@@ -17,11 +17,11 @@
   p
     = f.label :開始時刻
     br/
-    = f.datetime_select :from, {}, class: 'form-control', :use_month_numbers => true, :minute_step => 5
+    = render partial: "datetime_select", locals: {f: f, arg: :from}
   p
     = f.label :終了時刻
     br/
-    = f.datetime_select :to, {}, class: 'form-control', :use_month_numbers => true, :minute_step => 5
+    = render partial: "datetime_select", locals: {f: f, arg: :to}
   p
     = f.submit
 = link_to '戻る', slots_path
