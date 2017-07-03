@@ -6,7 +6,7 @@ table
         th colspan="3"
     - @sessions.each do |session|
         tr
-            td= Slot.all[session.slot_id].name
+            td= Slot.all.select {|slot| slot.id == session.slot_id}[0].name
             td= session.title.presence || '企画中'
             td= link_to '閲覧', session_path(session)
             td= link_to '編集', edit_session_path(session)

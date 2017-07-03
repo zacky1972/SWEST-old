@@ -1,7 +1,7 @@
 p
     = f.label :セッション枠
     br/
-    = f.select :slot_id, Slot.all.map{|o| [o.name, o.id]}, {class: 'form-control'}
+    = f.collection_select :slot_id, Slot.all, :id, :name, {class: 'form-control'}
 p
     = f.label :タイトル
     br/
