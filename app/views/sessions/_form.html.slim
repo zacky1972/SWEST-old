@@ -1,7 +1,7 @@
 p
     = f.label :セッション枠
     br/
-    = f.collection_select :slot_id, Slot.all, :id, :name, {class: 'form-control'}
+    = f.collection_select :slot_id, Slot.all.sort {|a, b| a.name <=> b.name}, :id, :name, {class: 'form-control'}
 p
     = f.label :タイトル
     br/
