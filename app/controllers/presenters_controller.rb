@@ -14,7 +14,11 @@ class PresentersController < ApplicationController
     end
     
     def show
-        @presenter = Presenter.find(params[:id])
+        begin
+            @presenter = Presenter.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+            redirect_to presenters_path
+        end
     end
     
     def index
@@ -22,23 +26,37 @@ class PresentersController < ApplicationController
     end
     
     def edit
-        @presenter = Presenter.find(params[:id])
-    end
-    
-    def update
-        @presenter = Presenter.find(params[:id])
-        
-        if @presenter.update(presenter_params)
-            redirect_to @presenter
-        else
-            render 'edit'
+        begin
+            @presenter = Presenter.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+            redirect_to presenters_path
         end
     end
     
+    def update
+        begin
+            @presenter = Presenter.find(params[:id])
+
+            if @presenter.update(presenter_params)
+                redirect_to @presenter
+            else
+                render 'edit'
+            end
+            
+        rescue ActiveRecord::RecordNotFound
+            redirect_to presenters_path
+        end
+        
+    end
+    
     def destroy
-        @presenter = Presenter.find(params[:id])
-        @presenter.destroy
-        redirect_to presenters_path
+        begin
+            @presenter = Presenter.find(params[:id])
+            @presenter.destroy
+            redirect_to presenters_path
+        rescue ActiveRecord::RecordNotFound
+            redirect_to presenters_path
+        end
     end
     
     private

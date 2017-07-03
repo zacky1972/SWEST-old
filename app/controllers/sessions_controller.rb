@@ -14,7 +14,11 @@ class SessionsController < ApplicationController
     end
     
     def show
-        @session = Session.find(params[:id])
+        begin
+            @session = Session.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+            redirect_to sessions_path
+        end
     end
     
     def index
@@ -22,23 +26,35 @@ class SessionsController < ApplicationController
     end
     
     def edit
-        @session = Session.find(params[:id])
+        begin
+            @session = Session.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+            redirect_to sessions_path
+        end
     end
     
     def update
-        @session = Session.find(params[:id])
-        
-        if @session.update(session_params)
-            redirect_to @session
-        else
-            render 'edit'
+        begin
+            @session = Session.find(params[:id])
+            if @session.update(session_params)
+                redirect_to @session
+            else
+                render 'edit'
+            end
+            
+        rescue ActiveRecord::RecordNotFound
+            redirect_to sessions_path
         end
     end
     
     def destroy
-        @session = Session.find(params[:id])
-        @session.destroy
-        redirect_to sessions_path
+        begin
+            @session = Session.find(params[:id])
+            @session.destroy
+            redirect_to sessions_path
+        rescue ActiveRecord::RecordNotFound
+            redirect_to sessions_path
+        end
     end
     
     private

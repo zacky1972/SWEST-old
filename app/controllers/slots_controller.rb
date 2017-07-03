@@ -13,7 +13,12 @@ class SlotsController < ApplicationController
     end
 
     def show
-        @slot = Slot.find(params[:id])
+        begin
+            @slot = Slot.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+            redirect_to slots_path
+        end
+
     end
     
     def index
@@ -21,23 +26,36 @@ class SlotsController < ApplicationController
     end
     
     def edit
-        @slot = Slot.find(params[:id])
+        begin
+            @slot = Slot.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+            redirect_to slots_path
+        end
     end
     
     def update
-        @slot = Slot.find(params[:id])
+        begin
+            @slot = Slot.find(params[:id])
         
-        if @slot.update(slot_params)
-            redirect_to @slot
-        else
-            render 'edit'
+            if @slot.update(slot_params)
+                redirect_to @slot
+            else
+                render 'edit'
+            end
+
+        rescue ActiveRecord::RecordNotFound
+            redirect_to slots_path
         end
     end
     
     def destroy
-        @slot = Slot.find(params[:id])
-        @slot.destroy
-        redirect_to slots_path
+        begin
+            @slot = Slot.find(params[:id])
+            @slot.destroy
+            redirect_to slots_path
+        rescue ActiveRecord::RecordNotFound
+            redirect_to slots_path
+        end
     end
     
     def dup
