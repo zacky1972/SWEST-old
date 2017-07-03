@@ -1,6 +1,6 @@
 .session-section-content
     .session-date-time
-        p セッション開始・終了日時
+        p = proc{|slot| slot.name + ": " + slot.from.strftime("%-m月%-d日(#{%w(日 月 火 水 木 金 土)[Time.now.wday]})") + " " + slot.from.strftime("%H:%M") + "〜" + slot.to.strftime("%H:%M") }.call(Slot.all[@session.slot_id])
     .session-section-title
         p = @session.title.presence || '企画中'
     .session-presenters

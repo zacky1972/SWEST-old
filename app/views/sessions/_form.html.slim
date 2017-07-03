@@ -1,4 +1,8 @@
 p
+    = f.label :セッション枠
+    br/
+    = f.select :slot_id, Slot.all.map{|o| [o.name, o.id]}, {class: 'form-control'}
+p
     = f.label :タイトル
     br/
     = f.text_field :title
