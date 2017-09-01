@@ -59,7 +59,7 @@ class SessionsController < ApplicationController
     
     private
     def session_params
-        params.require(:session).permit(:title, :abstract, :introduction, :slot_id)
+        params.require(:session).permit(:title, :abstract, :introduction, :slot_id, { :tag_ids=> [] })
     end
 
 end

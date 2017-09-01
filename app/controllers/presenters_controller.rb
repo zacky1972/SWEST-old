@@ -61,6 +61,6 @@ class PresentersController < ApplicationController
     
     private
     def presenter_params
-        params.require(:presenter).permit(:name, :affiliation, :avatar)
+        params.require(:presenter).permit(:name, :affiliation, :avatar, { :tag_ids=> [] })
     end
 end
